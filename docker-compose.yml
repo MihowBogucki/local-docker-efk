@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  fluent-bit:
+    image: fluent/fluent-bit
+    volumes:
+      - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
+    depends_on:
+      - elasticsearch
+  elasticsearch:
+    image: elasticsearch:7.9.1
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+
+  kibana:
+    image: kibana:7.9.1
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
