@@ -18,8 +18,7 @@ services:
     filebeat:
         image: "docker.elastic.co/beats/filebeat:7.2.0"
         user: root
-        # For Windows users enable command
-        # command: filebeat -e -strict.perms=false
+        command: filebeat -e -strict.perms=false
         volumes:
             - ./Filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
             - /var/run/docker.sock:/var/run/docker.sock
