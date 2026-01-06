@@ -1,14 +1,16 @@
-# local-docker-efk
-Helps you debug your local docker container logs using EFK
+# Local Docker EFK
 
-# Docker Compose Up
-docker-compose -f "docker-compose.yml" up -d --build
+This repository helps you debug your local Docker container logs using an Elasticsearch, Filebeat, and Kibana (EFK) stack.
 
-# View Kibana
-http://localhost:5601/
+## Features
+- Ready-to-use Docker configuration for elasticsearch, filebeat, and kibana.
+- Debug logs from your local Docker containers with ease.
 
-# Set up your index
-filebeat*
+## Topics
+- **Docker**: Containerized the whole setup.
+- **EFK Stack**: Elasticsearch for storage, Filebeat for log shipping, and Kibana for visualization.
+- **Kibana dashboards**.
 
-# Docker Compse Down
-docker-compose -f 'docker-compose.yml' -p 'local-docker-efk' down 
+## Usage Instruction(s)
+```sh
+$ git clone MihowBogucki/local-docker-efk.git branch issues auth URL=https://something: Needed required.png
